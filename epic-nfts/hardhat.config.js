@@ -1,6 +1,27 @@
-require("@nomicfoundation/hardhat-toolbox");
+require("@nomiclabs/hardhat-waffle");
 
-/** @type import('hardhat/config').HardhatUserConfig */
+// This is a sample Hardhat task. To learn how to create your own go to
+// https://hardhat.org/guides/create-task.html
+task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
+  const accounts = await hre.ethers.getSigners();
+
+  for (const account of accounts) {
+    console.log(account.address);
+  }
+});
+
+// You need to export an object to set up your config
+// Go to https://hardhat.org/config/ to learn more
+
+/**
+ * @type import('hardhat/config').HardhatUserConfig
+ */
 module.exports = {
-  solidity: "0.8.19",
+  solidity: "0.8.0",
+  networks : {
+    goerli: {
+      url: 'https://eth-goerli.g.alchemy.com/v2/1otEqxnx1pG6PxzYBEtAX96kGcHDgmga',
+      accounts: ['525a52f0bb6531983f5404bb615f67ea1a117ce9aba682be40979f47c6414a3a']
+    }
+  }
 };
