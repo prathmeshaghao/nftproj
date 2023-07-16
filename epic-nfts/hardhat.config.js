@@ -18,10 +18,4 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
  */
 module.exports = {
   solidity: "0.8.0",
-  networks : {
-    goerli: {
-      url: 'https://eth-goerli.g.alchemy.com/v2/1otEqxnx1pG6PxzYBEtAX96kGcHDgmga',
-      accounts: ['525a52f0bb6531983f5404bb615f67ea1a117ce9aba682be40979f47c6414a3a']
-    }
-  }
 };
